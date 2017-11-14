@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  title = Faker::HarryPotter.character
+  title = "## #{Faker::HarryPotter.character}"
   content = Faker::Simpsons.quote
   Article.create(title: title, content: content)
 

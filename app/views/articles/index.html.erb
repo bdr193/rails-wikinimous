@@ -3,7 +3,7 @@
   <%= link_to("Add a new article", new_article_path) %>
   <article>
     <% @articles.each do |article| %>
-    <h2><%= link_to(article.title, article_path(article.id)) %></h2>
+    <h2><%= link_to((raw Kramdown::Document.new(article.title).to_html), article_path(article.id)) %></h2>
     <p><%= article.content %></p>
     <% end %>
   </article>

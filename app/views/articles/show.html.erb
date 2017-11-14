@@ -1,6 +1,6 @@
 
 <div class="container" style="text-align:center;">
-<h2><%= @article.title %></h2>
+<%= raw Kramdown::Document.new(@article.title).to_html %>
 <p><%= @article.content %></p>
 
 <%= link_to("Edit", edit_article_path) %>
